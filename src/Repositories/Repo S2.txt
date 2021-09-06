@@ -1,0 +1,8 @@
+0;Peca 1;Primeira peca.
+9;Peca 8;Oitava peca. Teste teste teste teste teste teste teste adfasdfasfsadfasadfasdfsdf.
+3;Peca 2;Segunda peca
+4;Peca 4;Quarta peca.
+5;Peca 5;Quinta peca.
+6;Peca 7;Setima peca.
+7;Capacitor;Esta é uma pe?a que compõe a pe?a Chip.
+17;Transistor;Outra pe?a subcomponente de Chip.

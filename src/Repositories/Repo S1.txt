@@ -1,0 +1,7 @@
+0;Peca 1;Esta eh a primeira peca do repositorio.
+1;Peca 2;Esta ï¿½ a segunda pe?a do repositï¿½rio.
+2;Peca 3;Terceira peca.
+3;Chip;Este componente servirá de base para outras pecas.
+4;Transistor;Esta pe?a servirá de subomponente para o chip.
+5;Capacitor;Esta pe?a também servirá de subcomponente para chip.
+6;Capacitor2;asfjwe;k jf;we 
