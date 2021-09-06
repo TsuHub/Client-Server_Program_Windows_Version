@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<AnchorPane prefHeight="250.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.GUIInsertPartController">
+   <children>
+      <GridPane layoutX="22.0" layoutY="18.0" prefHeight="211.0" prefWidth="358.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="358.0" minWidth="10.0" prefWidth="358.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="310.0" minWidth="0.0" prefWidth="0.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="28.0" minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="44.0" minHeight="10.0" prefHeight="32.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="39.0" minHeight="5.0" prefHeight="11.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="50.0" minHeight="10.0" prefHeight="23.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="124.0" minHeight="10.0" prefHeight="105.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <TextField fx:id="tf_partName" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets right="150.0" />
+               </GridPane.margin>
+            </TextField>
+            <Label text="Dê um nome para a peça" />
+            <TextField fx:id="tf_partDescription" GridPane.rowIndex="4">
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+               <padding>
+                  <Insets bottom="80.0" />
+               </padding>
+            </TextField>
+            <Label text="Dê sua descrição" GridPane.rowIndex="3" />
+         </children>
+      </GridPane>
+      <Button fx:id="bt_Add" layoutX="282.0" layoutY="48.0" mnemonicParsing="false" onAction="#onAddButtonClicked" text="Adicionar" />
+   </children>
+</AnchorPane>

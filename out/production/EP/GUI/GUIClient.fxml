@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+
+<AnchorPane prefHeight="400.0" prefWidth="568.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.GUIClientController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="111.0" layoutX="45.0" layoutY="49.0" stroke="#00000033" strokeType="INSIDE" width="229.0" />
+      <GridPane layoutX="47.0" layoutY="17.0" prefHeight="137.0" prefWidth="223.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="142.0" minWidth="10.0" prefWidth="71.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="160.0" minWidth="10.0" prefWidth="152.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="Servidor">
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+            </Label>
+            <TextField fx:id="tf_serverPort" prefHeight="25.0" prefWidth="80.0" promptText="Ex: 2001" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets left="10.0" right="80.0" />
+               </GridPane.margin>
+            </TextField>
+            <Label text="Porta :" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets left="10.0" />
+               </GridPane.margin>
+            </Label>
+            <Label text="Endereço :" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets left="10.0" top="3.0" />
+               </GridPane.margin>
+            </Label>
+            <TextField fx:id="tf_serverAdress" promptText="Ex: 192.168.0.00" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets left="10.0" right="10.0" top="3.0" />
+               </GridPane.margin>
+            </TextField>
+            <Label fx:id="lbl_serverName" GridPane.columnIndex="1">
+               <GridPane.margin>
+                  <Insets left="10.0" />
+               </GridPane.margin>
+            </Label>
+            <Button fx:id="bt_connectServer" mnemonicParsing="false" onAction="#onConnectButtonClicked" text="Conectar" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <GridPane.margin>
+                  <Insets left="10.0" />
+               </GridPane.margin>
+            </Button>
+         </children>
+      </GridPane>
+      <VBox layoutX="46.0" layoutY="184.0" prefHeight="152.0" prefWidth="223.0">
+         <children>
+            <GridPane>
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="107.0" minWidth="10.0" prefWidth="89.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="152.0" minWidth="10.0" prefWidth="75.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="152.0" minWidth="10.0" prefWidth="59.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints />
+              </rowConstraints>
+               <children>
+                  <Label text="Repositório" />
+                  <Label fx:id="lbl_repoName" GridPane.columnIndex="1" />
+                  <Label fx:id="lbl_quantity" GridPane.columnIndex="2" />
+               </children>
+            </GridPane>
+            <AnchorPane prefHeight="11.0" prefWidth="223.0">
+               <children>
+                  <ListView prefHeight="18.0" prefWidth="223.0" />
+                  <Label layoutX="10.0" layoutY="1.0" prefHeight="17.0" prefWidth="190.0" text="  ID                   Nome" />
+               </children>
+               <VBox.margin>
+                  <Insets top="5.0" />
+               </VBox.margin>
+            </AnchorPane>
+            <ScrollPane prefHeight="148.0" prefWidth="223.0">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="313.0" prefWidth="206.0">
+                     <children>
+                        <ListView fx:id="lv_serverRepository" layoutX="-1.0" layoutY="-3.0" onMouseClicked="#getSelectedItemID" prefHeight="318.0" prefWidth="223.0" AnchorPane.topAnchor="-2.0" />
+                     </children>
+                  </AnchorPane>
+              </content>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </ScrollPane>
+         </children>
+      </VBox>
+      <Button fx:id="bt_insert" layoutX="73.0" layoutY="353.0" mnemonicParsing="false" onAction="#onInsertButtonClicked" prefHeight="25.0" prefWidth="64.0" text="Inserir" />
+      <Button fx:id="bt_remove" layoutX="169.0" layoutY="353.0" mnemonicParsing="false" onAction="#onRemoveButtonClicked" text="Remover" />
+      <GridPane layoutX="329.0" layoutY="48.0" prefHeight="25.0" prefWidth="190.0" AnchorPane.rightAnchor="49.0" AnchorPane.topAnchor="48.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="121.0" minWidth="10.0" prefWidth="121.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="71.0" minWidth="10.0" prefWidth="15.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="83.0" minWidth="10.0" prefWidth="55.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="66.0" minHeight="10.0" prefHeight="32.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <TextField fx:id="tf_searchField" prefHeight="25.0" prefWidth="123.0" promptText="ID do componente" />
+            <Button fx:id="bt_search" mnemonicParsing="false" onAction="#onSearchButtonClicked" prefHeight="25.0" prefWidth="53.0" text="Buscar" GridPane.columnIndex="2" />
+         </children>
+      </GridPane>
+      <VBox layoutX="323.0" layoutY="97.0" prefHeight="85.0" prefWidth="200.0">
+         <children>
+            <GridPane>
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="91.0" minWidth="10.0" prefWidth="75.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="76.0" minWidth="10.0" prefWidth="62.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="68.0" minWidth="10.0" prefWidth="64.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label prefHeight="25.0" prefWidth="53.0" text="Descrição">
+                     <GridPane.margin>
+                        <Insets bottom="2.5" />
+                     </GridPane.margin></Label>
+                  <Label fx:id="label_partDescription" GridPane.columnIndex="1">
+                     <GridPane.margin>
+                        <Insets bottom="2.5" />
+                     </GridPane.margin></Label>
+                  <Label fx:id="label_serverDescription" GridPane.columnIndex="2">
+                     <GridPane.margin>
+                        <Insets bottom="2.5" />
+                     </GridPane.margin></Label>
+               </children>
+            </GridPane>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <Label fx:id="label_description" alignment="TOP_LEFT" layoutX="15.0" prefHeight="50.0" prefWidth="170.0" textOverrun="CENTER_ELLIPSIS" wrapText="true" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="12.5" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="8.5" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="70.0" stroke="#00000032" strokeType="INSIDE" width="200.0" />
+               </children>
+               <VBox.margin>
+                  <Insets top="5.0" />
+               </VBox.margin>
+            </AnchorPane>
+         </children>
+      </VBox>
+      <GridPane layoutX="323.0" layoutY="202.0" prefHeight="177.0" prefWidth="200.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="189.0" minWidth="10.0" prefWidth="168.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="189.0" minWidth="2.0" prefWidth="6.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="94.0" minWidth="10.0" prefWidth="26.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="144.0" minHeight="10.0" prefHeight="144.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="69.0" minHeight="10.0" prefHeight="33.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="2">
+               <children>
+                  <Button fx:id="bt_addToSubpart" mnemonicParsing="false" onAction="#onAddSubpartList" prefHeight="25.0" prefWidth="25.0" text="+">
+                     <VBox.margin>
+                        <Insets top="20.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button fx:id="bt_removeFromSubpart" mnemonicParsing="false" onAction="#onRemoveSubpartList" prefHeight="25.0" prefWidth="25.0" text="-">
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin>
+                  </Button>
+               </children>
+            </VBox>
+            <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="1">
+               <children>
+                  <Label text="Quantidade a adicionar">
+                     <HBox.margin>
+                        <Insets top="2.5" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="tf_quantity" prefHeight="25.0" prefWidth="34.0">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+               <GridPane.margin>
+                  <Insets top="10.0" />
+               </GridPane.margin>
+            </HBox>
+            <VBox prefHeight="137.0" prefWidth="164.0">
+               <children>
+                  <Label prefHeight="25.0" prefWidth="96.0" text="Subcomponentes">
+                     <VBox.margin>
+                        <Insets bottom="2.5" />
+                     </VBox.margin>
+                  </Label>
+                  <AnchorPane prefHeight="36.0" prefWidth="147.0">
+                     <children>
+                        <ListView prefHeight="18.0" prefWidth="170.0" AnchorPane.rightAnchor="0.0" />
+                        <Label layoutY="1.0" prefHeight="17.0" prefWidth="168.0" text="         Nome               Qntd" />
+                     </children>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </AnchorPane>
+                  <ScrollPane prefHeight="128.0" prefWidth="183.0">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="237.0" prefWidth="149.0">
+                           <children>
+                              <ListView fx:id="lv_subpartsName" layoutX="-2.0" layoutY="-2.0" onMouseClicked="#getSelectedSubpartName" prefHeight="244.0" prefWidth="103.0" AnchorPane.leftAnchor="-2.0">
+                                 <padding>
+                                    <Insets left="25.0" right="25.0" />
+                                 </padding></ListView>
+                              <ListView fx:id="lv_subpartsQuantity" layoutX="96.0" layoutY="-1.0" prefHeight="242.0" prefWidth="64.0">
+                                 <padding>
+                                    <Insets left="20.0" right="20.0" />
+                                 </padding></ListView>
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </ScrollPane>
+               </children>
+            </VBox>
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>
